@@ -17,6 +17,8 @@ import newsRoutes from './routes/router.news.js';
 import contactRoutes from './routes/router.contact.js';
 import adminRoutes from './routes/router.admin.js';
 import { cloudinary } from './config/cloudinary.js';
+import merchRoutes from './routes/router.merch.js';
+import castRoutes from './routes/route.cast.js';
 
 // Fix for __dirname in ES Modules
 const __filename = fileURLToPath(import.meta.url);
@@ -79,6 +81,8 @@ app.use('/api/journalists', journalistRoutes);
 app.use('/api/venues', venueRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/news', newsRoutes);
+app.use("/api/merch", merchRoutes);
+app.use("/api/casts", castRoutes);
 // app.use('/api/calendar', calendarRoutes);
 app.use('/api/contact', contactRoutes);
 app.use('/api/admin', adminRoutes);
@@ -107,15 +111,14 @@ process.on('unhandledRejection', (err, promise) => {
 
 
 // ===== Start server =====
-// const server = app.listen(PORT, () => {
-//   console.log(`Server running in ${NODE_ENV} mode on port ${PORT}`);
-// });
+const server = app.listen(PORT, () => {
+  console.log(`Server running in ${NODE_ENV} mode on port ${PORT}`);
+});
 
 
 
-// export default server;
-
+export default server;
 
 
 //added for vercel hosting
-export default app;
+// export default app;
