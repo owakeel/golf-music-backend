@@ -19,6 +19,7 @@ import adminRoutes from './routes/router.admin.js';
 import { cloudinary } from './config/cloudinary.js';
 import merchRoutes from './routes/router.merch.js';
 import castRoutes from './routes/route.cast.js';
+import waveRoutes from './routes/route.wave.js';
 
 // Fix for __dirname in ES Modules
 const __filename = fileURLToPath(import.meta.url);
@@ -83,6 +84,7 @@ app.use('/api/events', eventRoutes);
 app.use('/api/news', newsRoutes);
 app.use("/api/merch", merchRoutes);
 app.use("/api/casts", castRoutes);
+app.use("/api/waves", waveRoutes);
 // app.use('/api/calendar', calendarRoutes);
 app.use('/api/contact', contactRoutes);
 app.use('/api/admin', adminRoutes);
